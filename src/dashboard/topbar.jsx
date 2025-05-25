@@ -8,6 +8,8 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined'
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'
 import SearchIcon from '@mui/icons-material/Search'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+
  
 
 
@@ -38,12 +40,13 @@ function Topbar() {
                 <IconButton>
                     <NotificationsOutlinedIcon/>
                 </IconButton>
+                 <IconButton>
+<SettingsOutlinedIcon/>
+                </IconButton>
                 <IconButton>
                     <PersonOutlinedIcon/>
                 </IconButton>
-                <IconButton>
-
-                </IconButton>
+               
             </Box>
 
         </Box>

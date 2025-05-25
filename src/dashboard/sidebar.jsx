@@ -15,12 +15,22 @@ import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import MaplineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
-
+import profile  from '../assets/me.jpg'
+function Item({title,to, icon,selected, setIsSelected,colors}){
+ return(
+    <MenuItem active={selected===title} style={{color:colors.grey[100]}} onClick={()=>{
+setIsSelected(title)
+    } } icon={icon}>   <Typography>{title}</Typography>
+    <Link to={to}/>
+    </MenuItem>
+ )
+}
 
 function Sidebar() {
     const theme=useTheme();
     const colors=tokens(theme.palette.mode);
     const [isCollapsed,setIsCollapsed]=useState(false);
+    const [selected,setIsSelected]=useState('Dashboard')
     
 
     return (
@@ -48,6 +58,7 @@ function Sidebar() {
 <Menu>
     <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)} icon={isCollapsed ? <MenuOutlinedIcon/>:undefined}>
     {!isCollapsed && (
+        <>
         <Box display='flex' justifyContent='space-between'>
             <Typography variant='h4' color={colors.grey[500]}>
                 ADMINS
@@ -56,11 +67,40 @@ function Sidebar() {
                 <MenuOutlinedIcon/>
             </IconButton>
         </Box>
-    ) }</MenuItem>
+    </>)}</MenuItem>
+
 </Menu>
+{!isCollapsed && (
+
+ <Box>
+    <Box display='flex' justifyContent='center' flexDirection='column' alignItems='center' >
+    <img
+    src={profile}
+    width='100px'
+    height='100px'
+    style={{borderRadius:'50%'}}
+    />
+   <Box textAlign='center'>
+     <Typography variant='h2' color={colors.grey[100]} sx={{ mt: 2 }} >
+Melissa S.
+    </Typography>
+    <Typography variant='h6' color={colors.greenAccent[400]}> 
+        The superManager
+    </Typography>
+</Box>
+</Box> 
+    
+
+ </Box>
+)}
+<Box>
+<Item title='Dashboard' to='/' icon={<HomeOutlinedIcon/>} selected={selected} setIsSelected={setIsSelected} colors={colors} />
+
+</Box>
 </ProSidebar>
-        </Box>
-    )
-}
+   
+ </Box>
+    
+    )}
 
 export default Sidebar
