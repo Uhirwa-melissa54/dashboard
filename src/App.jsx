@@ -4,7 +4,8 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import Topbar   from './dashboard/topbar'
 import Sidebar from './dashboard/sidebar';
 import Dashboard from './dashboard/dashboard';
-import { BrowserRouter } from 'react-router-dom';
+import Team from './dashboard/team';
+import { BrowserRouter ,Route, Routes} from 'react-router-dom';
 function App() {
     const [theme,colorMode]=useMode();
     return (
@@ -15,7 +16,10 @@ function App() {
                      <Sidebar/>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column',backgroundColor: theme.palette.background.default}}>
                         <Topbar/>
-<Dashboard/>
+<Routes>
+    <Route path="/" element={<Dashboard/>}/>
+     <Route path="/team" element={<Team/>}/>
+</Routes>
                        
                     </div>
                 </div>
