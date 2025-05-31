@@ -1,68 +1,98 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Basic Reset and Layout Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b0f29;
+  color: white;
+  height: 100vh;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #11192d;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* Sidebar user section */
+.sidebar .user-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .user-info img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.sidebar .user-info h2 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+}
+
+.sidebar .user-info p {
+  color: #00ffb3;
+  font-size: 14px;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #00bfff;
+}
+
+/* Active link */
+.sidebar a.active {
+  color: #00bfff;
+  font-weight: bold;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Header search bar and icons */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f1c4d;
+  padding: 10px 20px;
+}
+
+.search-bar input {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1a2d5a;
+  color: white;
+  outline: none;
+}
+
+.icon-bar i {
+  margin-left: 15px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

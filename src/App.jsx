@@ -5,6 +5,8 @@ import Topbar   from './dashboard/topbar'
 import Sidebar from './dashboard/sidebar';
 import Dashboard from './dashboard/dashboard';
 import Team from './dashboard/team';
+import Contancts from './dashboard/contancts';
+import Invoice from './dashboard/invoice';
 import { BrowserRouter ,Route, Routes} from 'react-router-dom';
 function App() {
     const [theme,colorMode]=useMode();
@@ -19,6 +21,8 @@ function App() {
 <Routes>
     <Route path="/" element={<Dashboard/>}/>
      <Route path="/team" element={<Team/>}/>
+     <Route path="/contancts" element={<Contancts/>}/>
+     <Route path="/invoice" element={<Invoice/>}/>
 </Routes>
                        
                     </div>

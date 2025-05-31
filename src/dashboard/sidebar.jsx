@@ -64,6 +64,8 @@ function Sidebar() {
              "& .pro-menu-item": {
       listStyle: "none", 
     },
+    "& .pro-inner-item a": {
+  textDecoration: "none !important",}
 
         }}>
 <ProSidebar collapsed={isCollapsed}>
