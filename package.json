@@ -25,6 +25,7 @@
     "@nivo/line": "^0.98.0",
     "@nivo/pie": "^0.98.0",
     "formik": "^2.4.6",
+    "fullcalendar": "^6.1.17",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-pro-sidebar": "^0.7.1",
