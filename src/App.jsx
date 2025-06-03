@@ -9,10 +9,11 @@ import Contancts from './dashboard/contancts';
 import Invoice from './dashboard/invoice';
 import Profile from './dashboard/profile';
 import Faq from './dashboard/faq';
-
-
 import { BrowserRouter ,Route, Routes} from 'react-router-dom';
-import Barchar from './dashboard/barchar';
+import Bar from './dashboard/bar';
+import Pie from './dashboard/pie';
+import Line from './dashboard/line';
+
 function App() {
     const [theme,colorMode]=useMode();
     return (
@@ -24,13 +25,15 @@ function App() {
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column',backgroundColor: theme.palette.background.default}}>
                         <Topbar/>
 <Routes>
-    <Route path="/" element={<Dashboard/>}/>
+     <Route path="/" element={<Dashboard/>}/>
      <Route path="/team" element={<Team/>}/>
      <Route path="/contancts" element={<Contancts/>}/>
      <Route path="/invoice" element={<Invoice/>}/>
      <Route path="/Profile" element={<Profile/>}/>
      <Route path="/faq" element={<Faq/>}/>
-     <Route path="/faq" element={<Barchar/>}/>
+     <Route path="/bar" element={<Bar/>}/>
+     <Route path="/pie" element={<Pie/>}/>
+     <Route path="/line" element={<Line/>}/>
 </Routes>
                        
                     </div>

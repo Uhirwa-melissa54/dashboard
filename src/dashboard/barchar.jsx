@@ -1,27 +1,65 @@
-import React from 'react';
-import { ResponsiveBar } from '@nivo/bar';
-import { barchartData } from '../data/barchar';
-
-function Barchar() {
+ import React from 'react'
+ import { barchartData } from '../data/barchar'
+ import { ResponsiveBar } from '@nivo/bar'
+import { useTheme } from '@emotion/react'
+import { tokens } from './theme'
+ 
+ function Barchar() {
+    const theme=useTheme();
+    const colors=tokens(theme.palette.mode)
     return (
-        <div style={{ height: '500px' }}>
-            <ResponsiveBar
+        <div style={{ height: '500px', width: '100%' }}>
+             <ResponsiveBar
                 data={barchartData}
-                keys={['hot dog', 'burger', 'sandwich', 'kebab', 'fries', 'donut']} // Make sure to include this if needed
+                theme={{
+                    axis:{
+                        domain:{
+                            line:{
+                                stroke:colors.grey[100]
+                            }
+                        },
+                        legend:{
+                        text:{
+                            fill:colors.grey[100],
+                            fontSize:15
+                        }
+                    },
+                    ticks:{
+                        line:{
+                            stroke:colors.grey[100],
+                            strokeWidth:1
+
+                        },
+                        text:{
+                            fill:colors.grey[100]
+                        }
+
+                    },
+                   
+                    },
+                     legends:{
+                        text:{
+                            fill:colors.grey[100]
+                        }
+                         
+                          
+                    },
+                    
+                }}
+                keys={['hot dog', 'burger', 'sandwich', 'kebab', 'fries', 'donut']}
                 indexBy="country"
                 margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
                 padding={0.3}
+                enableLabel={false} 
                 valueScale={{ type: 'linear' }}
                 indexScale={{ type: 'band', round: true }}
-                colors={{ scheme: 'nivo' }}
-                borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
                 axisTop={null}
                 axisRight={null}
                 axisBottom={{
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'country',
+                    legend: 'Country',
                     legendPosition: 'middle',
                     legendOffset: 32
                 }}
@@ -29,13 +67,12 @@ function Barchar() {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'food',
+                    legend: 'Food',
                     legendPosition: 'middle',
                     legendOffset: -40
                 }}
                 labelSkipWidth={12}
                 labelSkipHeight={12}
-                labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
                 legends={[
                     {
                         dataFrom: 'keys',
@@ -48,26 +85,18 @@ function Barchar() {
                         itemWidth: 100,
                         itemHeight: 20,
                         itemDirection: 'left-to-right',
-                        itemOpacity: 0.85,
+                        itemOpacity: 0.95,
                         symbolSize: 20,
-                        effects: [
-                            {
-                                on: 'hover',
-                                style: {
-                                    itemOpacity: 1
-                                }
-                            }
-                        ]
                     }
                 ]}
-                role="application"
-                ariaLabel="Nivo bar chart demo"
-                barAriaLabel={function (e) {
-                    return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
-                }}
+                animate={true}
+                motionStiffness={90}
+                motionDamping={15}
             />
         </div>
-    );
-}
-
-export default Barchar;
+        
+    )
+ }
+ 
+ export default Barchar
+ 

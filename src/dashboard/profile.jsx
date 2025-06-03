@@ -57,7 +57,7 @@ const profileSchema = yup.object({
     initialValues={initialValues} 
     validationSchema={profileSchema}  >
         {({values,touched,errors,handleChange,handleSubmit,handleBlur})=>(
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={handleSubmit}>
                 <Box>
                     <Box display="flex" gap="20px" mt="10px">
 <TextField name='firstName'   margin='normal' type='text' 
