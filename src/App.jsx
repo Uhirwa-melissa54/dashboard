@@ -13,6 +13,7 @@ import { BrowserRouter ,Route, Routes} from 'react-router-dom';
 import Bar from './dashboard/bar';
 import Pie from './dashboard/pie';
 import Line from './dashboard/line';
+import Calendar from './dashboard/calendar';
 
 function App() {
     const [theme,colorMode]=useMode();
@@ -34,6 +35,7 @@ function App() {
      <Route path="/bar" element={<Bar/>}/>
      <Route path="/pie" element={<Pie/>}/>
      <Route path="/line" element={<Line/>}/>
+     <Route path="/calendar" element={<Calendar/>}/>
 </Routes>
                        
                     </div>
