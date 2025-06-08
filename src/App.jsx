@@ -14,6 +14,7 @@ import Bar from './dashboard/bar';
 import Pie from './dashboard/pie';
 import Line from './dashboard/line';
 import Calendar from './dashboard/calendar';
+import GeoChart from './dashboard/geoChart';
 
 function App() {
     const [theme,colorMode]=useMode();
@@ -21,7 +22,7 @@ function App() {
         <colorContext.Provider value={colorMode}>
             <ThemeProvider theme={theme}>
                 <BrowserRouter>
-                <div style={{ display: 'flex', height: '100vh', width: '100vw' }}>
+                <div style={{ display: 'flex', width: '100vw' }}>
                      <Sidebar/>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column',backgroundColor: theme.palette.background.default}}>
                         <Topbar/>
@@ -36,6 +37,7 @@ function App() {
      <Route path="/pie" element={<Pie/>}/>
      <Route path="/line" element={<Line/>}/>
      <Route path="/calendar" element={<Calendar/>}/>
+     <Route path="/geography" element={<GeoChart/>}/>
 </Routes>
                        
                     </div>

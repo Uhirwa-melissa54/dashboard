@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import  FullCalendar from '@fullcalendar/react'
 import { formatDate } from '@fullcalendar/core';
 import {Box,List,ListItem,Typography, useTheme} from '@mui/material'
@@ -9,6 +9,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction'
 function Calendar() {
+    const [currentEvents,setCurrentEvents]=useState()
       const theme=useTheme()
        const colors=tokens(theme.palette.mode)
 
@@ -23,15 +24,29 @@ function Calendar() {
                 title,
                 start:selected.startStr,
                 end:selected.endStr,
-                allDay
+                allDay:selected.allDay
 
             })
         }
 
-     }  
-    
-    return (
-        <Box m='20px'>
+     }
+     
+     const handleEventClick=(selected)=>{
+
+        if(
+            window.confirm(`are you sure you want to delete this event ${selected.event.title}`)
+        ){
+            selected.event.remove()
+        }
+    }
+
+        return (
+            <Box m='20px'>
+                <Header title="Calendar" subtitle='Track your events with calendar'/>
+
+                <Box> 
+                   
+                 <Box>
             <FullCalendar
             height='75vh'
             plugins={[
@@ -51,12 +66,24 @@ function Calendar() {
             editable={true}
             selectable={true}
             selectMirror={true}//for user experience when selecting time range
-            dayMaxEvents={true}
+            dayMaxEvents={true}//you can select more days
             select={handleDateClick}
+            eventClick={handleEventClick}
+            eventsSet={(events)=>setCurrentEvents(events)}
             />
        
         </Box>
-    )
-}
 
-export default Calendar
+                </Box>
+
+               
+
+            </Box>
+        )
+    }
+
+ 
+    
+    
+
+export default Calendar;
