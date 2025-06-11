@@ -10,7 +10,7 @@ function Line() {
             <Header title="Line  Chart" subtitle="The representaion Of Our Sales"/>
             <Box height='75vh'>
 
-<LineChart/>
+<LineChart isDashboard='false'/>
 
 
             </Box>

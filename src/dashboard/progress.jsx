@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import { useTheme } from '@mui/material';
 import { tokens } from './theme';
 
-function Progress({ progress = "0.75", size = 100 }) {
+function Progress({ progress = "0.75", size = 35 }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
