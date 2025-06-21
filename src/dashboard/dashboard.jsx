@@ -54,24 +54,138 @@ function Dashboard() {
 
                 </Box>
                 
-                    <Box gridColumn='span 8' backgroundColor={colors.primary[400]}  display='flex' gridRow='span 2'>
-                        <Box mt='25px' p="0 30px" display='flex' justifyContent='space-between' alignItems='center'>
+                    <Box gridColumn='span 8' backgroundColor={colors.primary[400]}   gridRow='span 2'>
+                        <Box mt='25px' p="0 30px"  display='flex' justifyContent='space-between'>
+                            <Box>
                             <Typography variant='h5' fontWeight='600' color={colors.grey[100]}>
-Revenue Generated
+                             Revenue Generated
                             </Typography>
                             <Typography variant='h3' fontWeight='500' color={colors.greenAccent[500]}>
                                  59,342,32
-
-
                             </Typography>
+                             </Box>
+                            
+                    <Box>
+                              <Button >
+              
+                    <DownloadOutlinedIcon sx={{color:colors.greenAccent[500]}} />
+                  
+                </Button>
+
+                </Box>
 
                         </Box>
-                        <Box>
-                    <LineChart isDashboard='true'/>
-                    </Box>
+                        <Box height='200px' flex='1'>
+                            <LineChart/>
+                        </Box>
+                       
 
 
                 </Box>
+                <Box gridColumn='span 4'>
+                
+                <Box  backgroundColor={colors.primary[400]}  p="10px 10px" height='40px' mb='8px' >
+                    <Typography variant='h5' fontWeight='600' color={colors.grey[100]}>
+                         Recent Transactions
+                    </Typography>
+                </Box>
+
+                 <Box backgroundColor={colors.primary[400]}  p="10px 10px" height='60px' display='flex' alignItems='center' justifyContent='space-between' mb='8px'>
+                    <Box>
+                    <Typography variant='h5' fontWeight='600' color={colors.greenAccent[500]}>
+                         0f12345
+                    </Typography>
+                    <Typography variant='h6' fontWeight='300' color={colors.grey[100]}>
+                        Tom halsey
+                    </Typography>
+                    </Box>
+                    <Box>
+                     <Typography variant='h5' fontWeight='600' color={colors.grey[100]}>
+                         2025-02-16
+                    </Typography>
+                    </Box>
+                    <Box>
+                         <Button 
+                     sx={{backgroundColor:colors.greenAccent[300], color:colors.grey[100]}}>
+                    $4,123
+                    </Button>
+                    </Box>
+
+                    
+
+                </Box>
+
+                 <Box backgroundColor={colors.primary[400]}  p="10px 10px" height='60px' display='flex' alignItems='center' justifyContent='space-between' mb='8px'>
+                    <Box>
+                    <Typography variant='h5' fontWeight='600' color={colors.greenAccent[500]}>
+                         1f0980df
+                    </Typography>
+                     <Typography variant='h6' fontWeight='300' color={colors.grey[100]}>
+                         gig Hadid
+                    </Typography>
+
+                    </Box>
+                    <Box>
+                     <Typography variant='h5' fontWeight='600' color={colors.grey[100]}>
+                         2025-06-23
+                    </Typography>
+                    </Box>
+                    <Box>
+                         <Button 
+                     sx={{backgroundColor:colors.greenAccent[300], color:colors.grey[100]}}>
+                    $56,123
+                    </Button>
+                    </Box>
+                </Box>
+
+                 <Box backgroundColor={colors.primary[400]}  p="10px 10px" height='60px' display='flex' alignItems='center' justifyContent='space-between' mb='8px'>
+                    <Box>
+                    <Typography variant='h5' fontWeight='600' color={colors.greenAccent[500]}>
+                         fg120pfg
+                    </Typography>
+                     <Typography variant='h6' fontWeight='300' color={colors.grey[100]}>
+                         Kendall kee
+                    </Typography>
+
+                    </Box>
+                    <Box>
+                     <Typography variant='h5' fontWeight='600' color={colors.grey[100]}>
+                         2024-01-23
+                    </Typography>
+                    </Box>
+                    <Box>
+                         <Button 
+                     sx={{backgroundColor:colors.greenAccent[300], color:colors.grey[100]}}>
+                    $96,103
+                    </Button>
+                    </Box>
+                </Box>
+
+             <Box backgroundColor={colors.primary[400]}  p="10px 10px" height='50px' display='flex' alignItems='center' justifyContent='space-between' mb='8px'>
+                    <Box>
+                    <Typography variant='h5' fontWeight='600' color={colors.greenAccent[500]}>
+                         f67hji5
+                    </Typography>
+                     <Typography variant='h6' fontWeight='300' color={colors.grey[100]}>
+                         kylie jenner
+                    </Typography>
+
+                    </Box>
+                    <Box>
+                     <Typography variant='h5' fontWeight='600' color={colors.grey[100]}>
+                         2024-16-23
+                    </Typography>
+                    </Box>
+                    <Box>
+                         <Button 
+                     sx={{backgroundColor:colors.greenAccent[300], color:colors.grey[100]}}>
+                    $86,173
+                    </Button>
+                    </Box>
+                </Box>
+</Box>
+            
+                
 
             </Box>
         </Box>

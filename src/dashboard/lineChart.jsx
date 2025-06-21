@@ -15,6 +15,9 @@ function LineChart({isDashboard='false'}) {
 
          <ResponsiveLine
   data={lineData}
+  curve='cardinal'
+   enableGridX={false}
+  enableGridY={false}
   theme={{
     axis: {
       domain: {
@@ -75,7 +78,7 @@ function LineChart({isDashboard='false'}) {
   pointLabelYOffset={-12}
   enableTouchCrosshair={true}
   useMesh={true}
-  legends={isDashboard ? [] : [
+  legends={[
     {
       anchor: 'bottom-right',
       direction: 'column',
