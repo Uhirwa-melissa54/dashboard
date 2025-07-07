@@ -1,20 +1,25 @@
 # Dashboard App (WIP)
 
-This is a work-in-progress React Dashboard built using **Material UI (MUI)**.
+This is Finished work  using different technoologies with **Material UI (MUI)**.
 
 ##  Tech Stack
 
 - React
 - Material UI (MUI)
-- Context API (for theme toggle)
-- Custom theme tokens
+-nivo charts
+-full calendar
+-formik
+-yup for validation
+-react prosidebar
 - Data grid
 
-## Current Progress
+Features
+-Charts
+ -Bar chart
+ -Line chart
+ -Pie chart
+ -Geography chart
 
--  Theme setup (dark/light mode)
--  Tokens created for colors
--  Header component
--  Sidebar with menu
--  Search bar
--  Team routes with table made with data grid
+-Progress circle
+-Grid tables
+
